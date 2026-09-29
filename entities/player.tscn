@@ -126,4 +126,3 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" parent="." unique_id=133630291 instance=ExtResource("6_qsoyl")]
-limit_left = 0

@@ -88,5 +88,3 @@ position = Vector2(144, 104)
 texture = SubResource("CompressedTexture2D_s4ejc")
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
-
-[editable path="Player"]
