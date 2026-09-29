@@ -111,6 +111,7 @@ centered = false
 
 [node name="LevelEnding" parent="." unique_id=323130126 instance=ExtResource("9_wyuaa")]
 position = Vector2(72, 178)
+next_level = "forest"
 
 [node name="CollisionShape2D" parent="LevelEnding" index="0" unique_id=1846107450]
 shape = SubResource("RectangleShape2D_wyuaa")
