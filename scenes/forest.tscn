@@ -91,7 +91,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="LevelEnding" parent="." unique_id=323130126 instance=ExtResource("8_qm7rg")]
-position = Vector2(277, 22)
+position = Vector2(249, 23)
 next_level = "tropic"
 
 [editable path="Player"]

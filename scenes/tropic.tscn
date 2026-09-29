@@ -114,6 +114,7 @@ position = Vector2(72, 178)
 next_level = "forest"
 
 [node name="CollisionShape2D" parent="LevelEnding" index="0" unique_id=1846107450]
+position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_wyuaa")
 
 [editable path="LevelEnding"]
