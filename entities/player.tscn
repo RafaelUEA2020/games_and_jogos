@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce743ncxa4ic2" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Hurt (32 x 32).png" id="2_qly61"]
 [ext_resource type="Texture2D" uid="uid://b7184dc2iorvx" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Running (32 x 32).png" id="3_e4p34"]
 [ext_resource type="Texture2D" uid="uid://5gw4c14h5pau" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" id="4_qsoyl"]
+[ext_resource type="PackedScene" uid="uid://b4n8xkybe1ka3" path="res://entities/camera_2d.tscn" id="6_qsoyl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 
@@ -109,6 +110,8 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=633174394]
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=109271203]
@@ -122,7 +125,5 @@ sprite_frames = SubResource("SpriteFrames_yf5fn")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1085636376]
+[node name="Camera2D" parent="." unique_id=133630291 instance=ExtResource("6_qsoyl")]
 limit_left = 0
-limit_bottom = 208
-position_smoothing_enabled = true
