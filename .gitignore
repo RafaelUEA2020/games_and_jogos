@@ -221,4 +221,6 @@ __marimo__/
 # Godot 4+ specific ignores
 .godot/
 /android/
+.editorconfig
+*.git/
 >>>>>>> f1f4af7 (first commit)
