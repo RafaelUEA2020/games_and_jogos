@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cr807nu5ibgmn"]
+
+[ext_resource type="Script" uid="uid://dfvq1dja52oyx" path="res://scripts/robot.gd" id="1_8mpls"]
+[ext_resource type="Texture2D" uid="uid://dx66ytgafj1kg" path="res://sprites/Sprite Pack 4/5 - Robot_Walky_Hurt (32 x 32).png" id="1_qdufd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i210l"]
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhxhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qdufd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i210l"]
+size = Vector2(19, 20)
+
+[node name="Robot" type="CharacterBody2D" unique_id=1199028445]
+collision_layer = 4
+script = ExtResource("1_8mpls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602579069]
+position = Vector2(-2, 11)
+shape = SubResource("CapsuleShape2D_i210l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=20118727]
+position = Vector2(-2, 4.999999)
+scale = Vector2(1, 1.2499999)
+sprite_frames = SubResource("SpriteFrames_dhxhl")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1483598873]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1092048459]
+position = Vector2(-2, 11)
+shape = SubResource("RectangleShape2D_i210l")
+debug_color = Color(0.8830024, 0.27203116, 0.5075199, 0.41960785)

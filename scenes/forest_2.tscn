@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c56jeltogbmjf"]
+[gd_scene format=3]
 
 [ext_resource type="PackedScene" uid="uid://crb0h0hro3u2r" path="res://entities/player.tscn" id="1_lifw2"]
 [ext_resource type="TileSet" uid="uid://drrotfoo1gst5" path="res://sprites/terrain.tres" id="2_stcry"]
@@ -7,12 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://b5yyhfh04gnx6" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="5_d8dn4"]
 [ext_resource type="Texture2D" uid="uid://deaau7g6m22ea" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_5rndp"]
 [ext_resource type="Texture2D" uid="uid://b43w2otn72r20" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_bw3fi"]
-
 [ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
 [ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
 
-[sub_resource type="RectangleShape2D" id="RectExit"]
+[sub_resource type="RectangleShape2D" id="RectExitWest"]
 size = Vector2(16, 120)
 
 [sub_resource type="RectangleShape2D" id="RectExitEast"]
@@ -21,15 +20,16 @@ size = Vector2(16, 120)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4ejc"]
 load_path = "res://.godot/imported/1 - Leaf_top.png-803e7c43af0e714b5522f421181591d5.ctex"
 
-[node name="Forest" type="Node2D" unique_id=380924594]
+[node name="Forest2" type="Node2D" unique_id=380924594]
 script = ExtResource("area_gd")
 limit_right = 640
+limit_bottom = 208
 
 [node name="Player" parent="." unique_id=633174394 instance=ExtResource("1_lifw2")]
-position = Vector2(19, 165)
+position = Vector2(48, 170)
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=101746894]
-tile_map_data = PackedByteArray("AAAAAAwAAQAEAAEAAAADAAwAAQAEAAEAAAAEAAwAAQAEAAEAAAAFAAwAAQAEAAEAAAAGAAwAAQAEAAEAAAAHAAwAAQAEAAEAAAAIAAwAAQAEAAEAAAAJAAwAAQAEAAEAAAAKAAwAAQAEAAEAAAALAAwAAQAEAAEAAAAMAAwAAQAEAAEAAAANAAwAAQAEAAEAAAAOAAwAAQAEAAEAAAAPAAwAAQAEAAEAAAAQAAwAAQAEAAEAAAARAAwAAQAEAAEAAAASAAwAAQAEAAEAAAATAAwAAQAEAAEAAAAUAAwAAQAEAAEAAAAVAAwAAQAEAAEAAAAWAAwAAQAEAAEAAAAXAAwAAQAEAAEAAAAYAAwAAQAEAAEAAAAZAAwAAQAEAAEAAAAaAAwAAQAEAAEAAAAbAAwAAQAEAAEAAAAcAAwAAQAEAAEAAAAdAAwAAQAEAAEAAAAeAAwAAQAEAAEAAAAfAAwAAQAEAAEAAAAgAAwAAQAEAAEAAAAhAAwAAQAEAAEAAAAiAAwAAQAEAAEAAAAjAAwAAQAEAAEAAAAkAAwAAQAEAAEAAAAlAAwAAQAEAAEAAAAmAAwAAQAEAAEAAAAnAAwAAQAEAAEAAAAoAAwAAQAEAAEAAAApAAwAAQAEAAEAAAAqAAwAAQAEAAEAAAArAAwAAQAEAAEAAAAsAAwAAQAEAAEAAAAtAAwAAQAEAAEAAAAuAAwAAQAEAAEAAAAvAAwAAQAEAAEAAAAwAAwAAQAEAAEAAAAxAAwAAQAEAAEAAAAyAAwAAQAEAAEAAAAzAAwAAQAEAAEAAAA0AAwAAQAEAAEAAAA1AAwAAQAEAAEAAAA2AAwAAQAEAAEAAAA3AAwAAQAEAAEAAAA4AAwAAQAEAAEAAAA5AAwAAQAEAAEAAAA6AAwAAQAEAAEAAAA7AAwAAQAEAAEAAAA8AAwAAQAEAAEAAAA9AAwAAQAEAAEAAAA+AAwAAQAEAAEAAAA/AAwAAQAEAAEAAABAAAwAAQAEAAEAAABBAAwAAQAEAAEAAABCAAwAAQAEAAEAAABDAAwAAQAEAAEAAABEAAwAAQAEAAEAAABFAAwAAQAEAAEAAABGAAwAAQAEAAEAAABHAAwAAQAEAAEAAABIAAwAAQAEAAEAAABJAAwAAQAEAAEAAABKAAwAAQAEAAEAAABLAAwAAQAEAAEAAABMAAwAAQAEAAEAAABNAAwAAQAEAAEAAABOAAwAAQAEAAEAAABPAAwAAQAEAAEAAABQAAwAAQAEAAEAAABRAAwAAQAEAAEAAABSAAwAAQAEAAEAAABTAAwAAQAEAAEAAABUAAwAAQAEAAEAAABVAAwAAQAEAAEAAABWAAwAAQAEAAEAAABXAAwAAQAEAAEAAABYAAwAAQAEAAEAAABZAAwAAQAEAAEAAABaAAwAAQAEAAEAAABbAAwAAQAEAAEAAABcAAwAAQAEAAEAAABdAAwAAQAEAAEAAABeAAwAAQAEAAEAAABfAAwAAQAEAAEAAABgAAwAAQAEAAEAAABhAAwAAQAEAAEAAABiAAwAAQAEAAEAAABjAAwAAQAEAAEAAAACAAwAAQAEAAEAAAABAAwAAQAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAQAEAAEAAAABAAwAAQAEAAEAAAACAAwAAQAEAAEAAAADAAwAAQAEAAEAAAAEAAwAAQAEAAEAAAAFAAwAAQAEAAEAAAAGAAwAAQAEAAEAAAAHAAwAAQAEAAEAAAAIAAwAAQAEAAEAAAAJAAwAAQAEAAEAAAAKAAwAAQAEAAEAAAALAAwAAQAEAAEAAAAMAAwAAQAEAAEAAAANAAwAAQAEAAEAAAAOAAwAAQAFAAEAAAARAAwAAQADAAEAAAASAAwAAQAEAAEAAAATAAwAAQAEAAEAAAAUAAwAAQAEAAEAAAAVAAwAAQAEAAEAAAAWAAwAAQAEAAEAAAAXAAwAAQAEAAEAAAAYAAwAAQAEAAEAAAAZAAwAAQAEAAEAAAAaAAwAAQAEAAEAAAAbAAwAAQAEAAEAAAAcAAwAAQAEAAEAAAAdAAwAAQAEAAEAAAAeAAwAAQAEAAEAAAAfAAwAAQAEAAEAAAAgAAwAAQAEAAEAAAAhAAwAAQAEAAEAAAAiAAwAAQAEAAEAAAAjAAwAAQAEAAEAAAAkAAwAAQAEAAEAAAAlAAwAAQAEAAEAAAAmAAwAAQAEAAEAAAAnAAwAAQAEAAEAAAATAAoAAQAJAAMAAAAUAAoAAQAKAAMAAAAVAAoAAQANAAMAAAAXAAgAAQAJAAMAAAAYAAgAAQAKAAMAAAAZAAgAAQAKAAMAAAAaAAgAAQAKAAMAAAAbAAgAAQANAAMAAAA=")
 tile_set = ExtResource("2_stcry")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=859208590]
@@ -106,33 +106,39 @@ region_rect = Rect2(0, 0, 576, 208)
 [node name="FromWest" type="Marker2D" parent="Spawns"]
 position = Vector2(48, 170)
 
+[node name="FromEast" type="Marker2D" parent="Spawns"]
+position = Vector2(592, 170)
+
 [node name="ExitWest" type="Area2D" parent="."]
 position = Vector2(8, 130)
 script = ExtResource("exit_gd")
-target_scene = "res://scenes/game.tscn"
+target_scene = "res://scenes/forest.tscn"
 target_spawn = "FromEast"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitWest"]
-shape = SubResource("RectExit")
-
-[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(200, 176)
-
-[node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(360, 176)
-patrol_range = 70.0
-
-[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(520, 176)
-
-[node name="FromEast" type="Marker2D" parent="Spawns"]
-position = Vector2(592, 170)
+shape = SubResource("RectExitWest")
 
 [node name="ExitEast" type="Area2D" parent="."]
 position = Vector2(632, 130)
 script = ExtResource("exit_gd")
-target_scene = "res://scenes/forest_2.tscn"
+target_scene = "res://scenes/tropic.tscn"
 target_spawn = "FromWest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
 shape = SubResource("RectExitEast")
+
+[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(140, 176)
+patrol_range = 50
+
+[node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(395, 176)
+patrol_range = 25
+
+[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(400, 112)
+patrol_range = 24
+
+[node name="Enemy4" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(520, 176)
+patrol_range = 60

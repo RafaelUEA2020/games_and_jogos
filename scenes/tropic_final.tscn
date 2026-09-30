@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://o5sxak2lotmn"]
+[gd_scene format=3]
 
 [ext_resource type="PackedScene" uid="uid://crb0h0hro3u2r" path="res://entities/player.tscn" id="1_j8cmn"]
 [ext_resource type="TileSet" uid="uid://drrotfoo1gst5" path="res://sprites/terrain.tres" id="2_mtmls"]
@@ -12,11 +12,7 @@
 [ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
 [ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
 
-[sub_resource type="RectangleShape2D" id="RectExitWest"]
-size = Vector2(16, 100)
 
-[sub_resource type="RectangleShape2D" id="RectExitTop"]
-size = Vector2(48, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -32,27 +28,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Tropic" type="Node2D" unique_id=1994338957]
+[node name="TropicFinal" type="Node2D" unique_id=1994338957]
 script = ExtResource("area_gd")
-limit_top = -220
-limit_right = 1056
+limit_right = 288
 limit_bottom = 208
 
 [node name="Player" parent="." unique_id=633174394 instance=ExtResource("1_j8cmn")]
-position = Vector2(11, 169)
+position = Vector2(40, 165)
 
 [node name="Terrain" type="TileMapLayer" parent="." unique_id=598406157]
 position = Vector2(0, -4)
-tile_map_data = PackedByteArray("AAAKAAwAAgADAAEAAAALAAwAAgAEAAEAAAAMAAwAAgAEAAEAAAANAAwAAgAEAAEAAAAOAAwAAgAEAAEAAAAPAAwAAgAEAAEAAAAQAAwAAgAEAAEAAAARAAwAAgAEAAEAAAASAAwAAgAEAAEAAAATAAwAAgAEAAEAAAAUAAwAAgAEAAEAAAAVAAwAAgAEAAEAAAAWAAwAAgAEAAEAAAAXAAwAAgAEAAEAAAAYAAwAAgAEAAEAAAAZAAwAAgAEAAEAAAAaAAwAAgAEAAEAAAAbAAwAAgAEAAEAAAAcAAwAAgAEAAEAAAAdAAwAAgAEAAEAAAAeAAwAAgAEAAEAAAAfAAwAAgAEAAEAAAAgAAwAAgAEAAEAAAAhAAwAAgAEAAEAAAAiAAwAAgAEAAEAAAAjAAwAAgAEAAEAAAAkAAwAAgAEAAEAAAAlAAwAAgAEAAEAAAAmAAwAAgAEAAEAAAAnAAwAAgAEAAEAAAAoAAwAAgAEAAEAAAApAAwAAgAEAAEAAAAqAAwAAgAEAAEAAAArAAwAAgAEAAEAAAAsAAwAAgAEAAEAAAAtAAwAAgAEAAEAAAAuAAwAAgAEAAEAAAAvAAwAAgAEAAEAAAAwAAwAAgAEAAEAAAAxAAwAAgAEAAEAAAAyAAwAAgAEAAEAAAAzAAwAAgAEAAEAAAA0AAwAAgAEAAEAAAA1AAwAAgAEAAEAAAA2AAwAAgAEAAEAAAA3AAwAAgAEAAEAAAA4AAwAAgAEAAEAAAA5AAwAAgAEAAEAAAA6AAwAAgAEAAEAAAA7AAwAAgAEAAEAAAA8AAwAAgAEAAEAAAA9AAwAAgAEAAEAAAA+AAwAAgAEAAEAAAA/AAwAAgAEAAEAAABAAAwAAgAEAAEAAABBAAwAAgAEAAEAAAAAAAwAAgAEAAEAAAABAAwAAgAEAAEAAAACAAwAAgAEAAEAAAADAAwAAgAEAAEAAAAEAAwAAgAEAAEAAAAFAAwAAgAEAAEAAAAGAAwAAgAFAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAwAAgADAAEAAAABAAwAAgAEAAEAAAACAAwAAgAEAAEAAAADAAwAAgAEAAEAAAAEAAwAAgAEAAEAAAAFAAwAAgAEAAEAAAAGAAwAAgAEAAEAAAAHAAwAAgAEAAEAAAAIAAwAAgAEAAEAAAAJAAwAAgAEAAEAAAAKAAwAAgAEAAEAAAALAAwAAgAEAAEAAAAMAAwAAgAEAAEAAAANAAwAAgAEAAEAAAAOAAwAAgAEAAEAAAAPAAwAAgAEAAEAAAAQAAwAAgAEAAEAAAARAAwAAgAFAAEAAAA=")
 tile_set = ExtResource("2_mtmls")
 
-[node name="Water" type="TileMapLayer" parent="." unique_id=289567885]
-position = Vector2(-1, -4)
-tile_map_data = PackedByteArray("AAABAA0AAwAMAAYAAAACAA0AAwAMAAYAAAADAA0AAwAMAAYAAAAEAA0AAwAMAAYAAAAFAA0AAwAMAAYAAAAGAA0AAwAMAAYAAAAHAA0AAwAMAAYAAAAIAA0AAwAMAAYAAAAKAA0AAwAMAAYAAAALAAwAAwAMAAUAAAALAA0AAwAMAAYAAAAMAAwAAwAMAAUAAAAMAA0AAwAMAAYAAAANAAwAAwAMAAUAAAANAA0AAwAMAAYAAAAOAAwAAwAMAAUAAAAOAA0AAwAMAAYAAAAPAAwAAwAMAAUAAAAPAA0AAwAMAAYAAAAQAAwAAwAMAAUAAAAQAA0AAwAMAAYAAAARAAwAAwAMAAUAAAARAA0AAwAMAAYAAAASAAwAAwAMAAUAAAASAA0AAwAMAAYAAAATAAwAAwAMAAUAAAATAA0AAwAMAAYAAAAUAAwAAwAMAAUAAAAUAA0AAwAMAAYAAAAVAAwAAwAMAAUAAAAVAA0AAwAMAAYAAAAWAAwAAwAMAAUAAAAWAA0AAwAMAAYAAAAXAAwAAwAMAAUAAAAXAA0AAwAMAAYAAAAKAAwAAwAMAAUAAAAGAAwAAwAMAAUAAAAHAAwAAwAMAAUAAAAIAAwAAwAMAAUAAAABAAwAAwAMAAUAAAACAAwAAwAMAAUAAAADAAwAAwAMAAUAAAAAAAwAAwAMAAUAAAAJAA0AAwAMAAYAAAAJAAwAAwAMAAUAAAAEAAwAAwAMAAUAAAAFAAwAAwAMAAUAAAAAAA0AAwAMAAYAAAAYAAwAAwAMAAUAAAAYAA0AAwAMAAYAAAAZAAwAAwAMAAUAAAAZAA0AAwAMAAYAAAAaAAwAAwAMAAUAAAAaAA0AAwAMAAYAAAA=")
-tile_set = ExtResource("3_mtmls")
-
 [node name="Plataforms" type="TileMapLayer" parent="." unique_id=124614679]
-tile_map_data = PackedByteArray("AAAGAAoAAgAJAAMAAAAHAAoAAgAKAAMAAAAKAAoAAgANAAMAAAAJAAoAAgAKAAMAAAAIAAoAAgAKAAMAAAALAAgAAgAJAAMAAAAMAAgAAgAKAAMAAAANAAgAAgAKAAMAAAAOAAgAAgANAAMAAAAQAAcAAgAJAAMAAAARAAcAAgAKAAMAAAASAAcAAgAKAAMAAAATAAcAAgANAAMAAAADAAIAAgAKAAMAAAAEAAIAAgAKAAMAAAAFAAIAAgANAAMAAAAIAAMAAgAKAAMAAAAJAAMAAgAKAAMAAAAKAAMAAgANAAMAAAAMAAUAAgAKAAMAAAANAAUAAgAKAAMAAAAOAAUAAgANAAMAAAACAAIAAgAJAAMAAAAHAAMAAgAJAAMAAAALAAUAAgAJAAMAAAAGAAAAAgAJAAMAAAAHAAAAAgAKAAMAAAAIAAAAAgAKAAMAAAAJAAAAAgANAAMAAAAKAP7/AgAJAAMAAAALAP7/AgAKAAMAAAAMAP7/AgANAAMAAAANAPz/AgAJAAMAAAAOAPz/AgAKAAMAAAAPAPz/AgANAAMAAAAJAPv/AgAJAAMAAAAKAPv/AgAKAAMAAAALAPv/AgANAAMAAAAFAPr/AgAJAAMAAAAGAPr/AgAKAAMAAAAHAPr/AgANAAMAAAAIAPj/AgAJAAMAAAAJAPj/AgAKAAMAAAAKAPj/AgANAAMAAAALAPb/AgAJAAMAAAAMAPb/AgAKAAMAAAANAPb/AgANAAMAAAA=")
+tile_map_data = PackedByteArray("AAAEAAoAAgAJAAMAAAAFAAoAAgAKAAMAAAAGAAoAAgANAAMAAAAJAAgAAgAJAAMAAAAKAAgAAgAKAAMAAAALAAgAAgAKAAMAAAAMAAgAAgANAAMAAAA=")
 tile_set = ExtResource("2_mtmls")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1094867080]
@@ -110,37 +100,20 @@ frame = 1
 frame_progress = 0.666086
 centered = false
 
-[node name="Spawns" type="Node2D" parent="."]
-
-[node name="FromWest" type="Marker2D" parent="Spawns"]
-position = Vector2(40, 170)
-
-[node name="ExitWest" type="Area2D" parent="."]
-position = Vector2(8, 150)
-script = ExtResource("exit_gd")
-target_scene = "res://scenes/forest_2.tscn"
-target_spawn = "FromEast"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitWest"]
-shape = SubResource("RectExitWest")
-
-[node name="ExitTop" type="Area2D" parent="."]
-position = Vector2(200, -180)
-script = ExtResource("exit_gd")
-target_scene = "res://scenes/tropic_final.tscn"
-target_spawn = ""
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTop"]
-shape = SubResource("RectExitTop")
-
 [node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(300, 172)
-patrol_range = 50
+position = Vector2(220, 172)
+patrol_range = 30
 
 [node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(520, 172)
-patrol_range = 60
+position = Vector2(176, 112)
+patrol_range = 20
 
-[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
-position = Vector2(760, 172)
-patrol_range = 70
+[node name="FinalLabel" type="Label" parent="."]
+z_index = 5
+offset_left = 44.0
+offset_top = 40.0
+offset_right = 244.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 12
+text = "ÁREA FINAL\nVocê chegou ao fim da demo!"
+horizontal_alignment = 1
