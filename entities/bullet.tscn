@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_bullet"]
+[ext_resource type="Texture2D" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Bullet (16 x 16).png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectBullet"]
+size = Vector2(6, 4)
+
+[node name="Bullet" type="Area2D"]
+z_index = 1
+script = ExtResource("1_bullet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectBullet")

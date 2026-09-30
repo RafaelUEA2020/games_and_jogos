@@ -3,12 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://crb0h0hro3u2r" path="res://entities/player.tscn" id="1_uwrxv"]
 [ext_resource type="TileSet" uid="uid://drrotfoo1gst5" path="res://sprites/terrain.tres" id="2_lbhrr"]
 [ext_resource type="TileSet" uid="uid://cjkcwrgqb0ket" path="res://sprites/decoration.tres" id="3_lnu2h"]
+[ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
+[ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
+
+[sub_resource type="RectangleShape2D" id="RectExit"]
+size = Vector2(16, 64)
+
+[sub_resource type="RectangleShape2D" id="RectExitWest"]
+size = Vector2(16, 130)
 
 [node name="Game" type="Node2D" unique_id=680340914]
-scale = Vector2(0.9525378, 0.9968802)
+script = ExtResource("area_gd")
+limit_right = 288
 
 [node name="Player" parent="." unique_id=633174394 instance=ExtResource("1_uwrxv")]
-position = Vector2(12, 74)
+position = Vector2(40, 74)
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1165598471]
 
@@ -21,3 +31,33 @@ tile_set = ExtResource("2_lbhrr")
 z_index = 2
 tile_map_data = PackedByteArray("AAAHAAQAAAABAAEAAAAQAAEAAAAJAAEAAAALAAQAAAADAAUAAAA=")
 tile_set = ExtResource("3_lnu2h")
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="FromWest" type="Marker2D" parent="Spawns"]
+position = Vector2(40, 74)
+
+[node name="FromEast" type="Marker2D" parent="Spawns"]
+position = Vector2(240, 30)
+
+[node name="ExitEast" type="Area2D" parent="."]
+position = Vector2(280, 32)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/forest.tscn"
+target_spawn = "FromWest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
+shape = SubResource("RectExit")
+
+[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(120, 78)
+patrol_range = 16.0
+
+[node name="ExitWest" type="Area2D" parent="."]
+position = Vector2(8, 64)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/grass_west.tscn"
+target_spawn = "FromEast"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitWest"]
+shape = SubResource("RectExitWest")

@@ -9,10 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://b43w2otn72r20" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_bw3fi"]
 [ext_resource type="PackedScene" uid="uid://kyg8wpdkjgxx" path="res://entities/level_ending.tscn" id="8_qm7rg"]
 
+[ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
+[ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
+
+[sub_resource type="RectangleShape2D" id="RectExit"]
+size = Vector2(16, 120)
+
+[sub_resource type="RectangleShape2D" id="RectExitEast"]
+size = Vector2(16, 120)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4ejc"]
 load_path = "res://.godot/imported/1 - Leaf_top.png-803e7c43af0e714b5522f421181591d5.ctex"
 
 [node name="Forest" type="Node2D" unique_id=380924594]
+script = ExtResource("area_gd")
+limit_right = 640
 
 [node name="Player" parent="." unique_id=633174394 instance=ExtResource("1_lifw2")]
 position = Vector2(344, -51)
@@ -95,3 +107,38 @@ position = Vector2(249, 23)
 next_level = "tropic"
 
 [editable path="Player"]
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="FromWest" type="Marker2D" parent="Spawns"]
+position = Vector2(48, 170)
+
+[node name="ExitWest" type="Area2D" parent="."]
+position = Vector2(8, 130)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/game.tscn"
+target_spawn = "FromEast"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitWest"]
+shape = SubResource("RectExit")
+
+[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(200, 176)
+
+[node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(360, 176)
+patrol_range = 70.0
+
+[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(520, 176)
+
+[node name="FromEast" type="Marker2D" parent="Spawns"]
+position = Vector2(592, 170)
+
+[node name="ExitEast" type="Area2D" parent="."]
+position = Vector2(632, 130)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/forest_2.tscn"
+target_spawn = "FromWest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
+shape = SubResource("RectExitEast")
