@@ -126,3 +126,23 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" parent="." unique_id=133630291 instance=ExtResource("6_qsoyl")]
+<<<<<<< HEAD
+=======
+limit_left = 0
+<<<<<<< HEAD
+limit_bottom = 208
+position_smoothing_enabled = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=897980670]
+position = Vector2(0, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=460360012]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_i210l")
+debug_color = Color(0.89245534, 0.24239701, 0.54516983, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+=======
+>>>>>>> 5f3cd71 (mergeando os arquivos)
+>>>>>>> 19aae6e (merging files)

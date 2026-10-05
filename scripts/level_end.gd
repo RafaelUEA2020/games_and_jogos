@@ -7,3 +7,6 @@ func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, 
 	
 func load_next_scene():
 	get_tree().change_scene_to_file("res://scenes/"+ next_level + ".tscn")
+
+func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	print("tocou")
