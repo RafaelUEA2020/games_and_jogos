@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://deaau7g6m22ea" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_5rndp"]
 [ext_resource type="Texture2D" uid="uid://b43w2otn72r20" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_bw3fi"]
 [ext_resource type="PackedScene" uid="uid://kyg8wpdkjgxx" path="res://entities/level_ending.tscn" id="8_qm7rg"]
-
 [ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
 [ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
@@ -18,6 +17,7 @@ size = Vector2(16, 120)
 
 [sub_resource type="RectangleShape2D" id="RectExitEast"]
 size = Vector2(16, 120)
+
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s4ejc"]
 load_path = "res://.godot/imported/1 - Leaf_top.png-803e7c43af0e714b5522f421181591d5.ctex"
@@ -142,5 +142,9 @@ target_spawn = "FromWest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
 shape = SubResource("RectExitEast")
+
+[node name="LevelEnding" parent="." unique_id=323130126 instance=ExtResource("8_qm7rg")]
+position = Vector2(277, 22)
+next_level = "tropic"
 
 [editable path="Player"]

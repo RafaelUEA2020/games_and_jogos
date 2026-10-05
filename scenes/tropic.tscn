@@ -8,13 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://esolxlq06d3h" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="6_2v5ri"]
 [ext_resource type="Texture2D" uid="uid://dtguxiwx4tarf" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_63ryy"]
 [ext_resource type="Texture2D" uid="uid://c8v52jwj7pe0s" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_wyuaa"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://kyg8wpdkjgxx" path="res://entities/level_ending.tscn" id="9_wyuaa"]
-=======
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://cr807nu5ibgmn" path="res://entities/robot.tscn" id="9_wyuaa"]
-=======
->>>>>>> 19aae6e (merging files)
+
+[ext_resource type="PackedScene" uid="uid://cr807nu5ibgmn" path="res://entities/robot.tscn" id="9_robot"]
+
 [ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
 [ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
@@ -24,11 +21,9 @@ size = Vector2(16, 100)
 
 [sub_resource type="RectangleShape2D" id="RectExitTop"]
 size = Vector2(48, 24)
-<<<<<<< HEAD
-=======
+
 [ext_resource type="PackedScene" uid="uid://kyg8wpdkjgxx" path="res://entities/level_ending.tscn" id="9_wyuaa"]
->>>>>>> 5f3cd71 (mergeando os arquivos)
->>>>>>> 19aae6e (merging files)
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -65,11 +60,7 @@ tile_map_data = PackedByteArray("AAABAA0AAwAMAAYAAAACAA0AAwAMAAYAAAADAA0AAwAMAAY
 tile_set = ExtResource("3_mtmls")
 
 [node name="Plataforms" type="TileMapLayer" parent="Tiles" unique_id=124614679]
-<<<<<<< HEAD
 tile_map_data = PackedByteArray("AAAGAAoAAgAJAAMAAAAHAAoAAgAKAAMAAAAKAAoAAgANAAMAAAAJAAoAAgAKAAMAAAAIAAoAAgAKAAMAAAALAAgAAgAJAAMAAAAMAAgAAgAKAAMAAAANAAgAAgAKAAMAAAAOAAgAAgANAAMAAAAQAAcAAgAJAAMAAAARAAcAAgAKAAMAAAASAAcAAgAKAAMAAAATAAcAAgANAAMAAAADAAIAAgAKAAMAAAAEAAIAAgAKAAMAAAAFAAIAAgANAAMAAAAIAAMAAgAKAAMAAAAJAAMAAgAKAAMAAAAKAAMAAgANAAMAAAAMAAUAAgAKAAMAAAANAAUAAgAKAAMAAAAOAAUAAgANAAMAAAACAAIAAgAJAAMAAAAHAAMAAgAJAAMAAAALAAUAAgAJAAMAAAAGAAAAAgAJAAMAAAAHAAAAAgAKAAMAAAAIAAAAAgAKAAMAAAAJAAAAAgANAAMAAAAKAP7/AgAJAAMAAAALAP7/AgAKAAMAAAAMAP7/AgANAAMAAAANAPz/AgAJAAMAAAAOAPz/AgAKAAMAAAAPAPz/AgANAAMAAAAJAPv/AgAJAAMAAAAKAPv/AgAKAAMAAAALAPv/AgANAAMAAAAFAPr/AgAJAAMAAAAGAPr/AgAKAAMAAAAHAPr/AgANAAMAAAAIAPj/AgAJAAMAAAAJAPj/AgAKAAMAAAAKAPj/AgANAAMAAAALAPb/AgAJAAMAAAAMAPb/AgAKAAMAAAANAPb/AgANAAMAAAAQAAMAAgAJAAMAAAARAAMAAgAKAAMAAAASAAMAAgAKAAMAAAATAAMAAgANAAMAAAATAAEAAgAJAAMAAAAUAAEAAgAKAAMAAAAVAAEAAgAKAAMAAAAWAAEAAgANAAMAAAAYAP//AgAJAAMAAAAZAP//AgAKAAMAAAAaAP//AgAKAAMAAAAbAP//AgANAAMAAAA=")
-=======
-tile_map_data = PackedByteArray("AAAGAAoAAgAJAAMAAAAHAAoAAgAKAAMAAAAKAAoAAgANAAMAAAAJAAoAAgAKAAMAAAAIAAoAAgAKAAMAAAALAAgAAgAJAAMAAAAMAAgAAgAKAAMAAAANAAgAAgAKAAMAAAAOAAgAAgANAAMAAAAQAAcAAgAJAAMAAAARAAcAAgAKAAMAAAASAAcAAgAKAAMAAAATAAcAAgANAAMAAAADAAIAAgAKAAMAAAAEAAIAAgAKAAMAAAAFAAIAAgANAAMAAAAIAAMAAgAKAAMAAAAJAAMAAgAKAAMAAAAKAAMAAgANAAMAAAAMAAUAAgAKAAMAAAANAAUAAgAKAAMAAAAOAAUAAgANAAMAAAACAAIAAgAJAAMAAAAHAAMAAgAJAAMAAAALAAUAAgAJAAMAAAAGAAAAAgAJAAMAAAAHAAAAAgAKAAMAAAAIAAAAAgAKAAMAAAAJAAAAAgANAAMAAAAKAP7/AgAJAAMAAAALAP7/AgAKAAMAAAAMAP7/AgANAAMAAAANAPz/AgAJAAMAAAAOAPz/AgAKAAMAAAAPAPz/AgANAAMAAAAJAPv/AgAJAAMAAAAKAPv/AgAKAAMAAAALAPv/AgANAAMAAAAFAPr/AgAJAAMAAAAGAPr/AgAKAAMAAAAHAPr/AgANAAMAAAAIAPj/AgAJAAMAAAAJAPj/AgAKAAMAAAAKAPj/AgANAAMAAAALAPb/AgAJAAMAAAAMAPb/AgAKAAMAAAANAPb/AgANAAMAAAA=")
->>>>>>> 19aae6e (merging files)
 tile_set = ExtResource("2_mtmls")
 
 [node name="Decoration" type="TileMapLayer" parent="Tiles" unique_id=1948149931]
@@ -165,6 +156,41 @@ position = Vector2(200, -180)
 script = ExtResource("exit_gd")
 target_scene = "res://scenes/tropic_final.tscn"
 target_spawn = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTop"]
+shape = SubResource("RectExitTop")
+
+[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(300, 172)
+patrol_range = 50
+
+[node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(520, 172)
+patrol_range = 60
+
+[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(760, 172)
+patrol_range = 70
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="FromWest" type="Marker2D" parent="Spawns"]
+position = Vector2(40, 170)
+
+[node name="ExitWest" type="Area2D" parent="."]
+position = Vector2(8, 150)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/forest_2.tscn"
+target_spawn = "FromEast"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitWest"]
+shape = SubResource("RectExitWest")
+
+[node name="ExitTop" type="Area2D" parent="."]
+position = Vector2(200, -180)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/tropic_final.tscn"
+target_spawn = ""
+next_level = "forest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTop"]
 shape = SubResource("RectExitTop")
