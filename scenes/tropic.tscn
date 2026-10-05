@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://esolxlq06d3h" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="6_2v5ri"]
 [ext_resource type="Texture2D" uid="uid://dtguxiwx4tarf" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_63ryy"]
 [ext_resource type="Texture2D" uid="uid://c8v52jwj7pe0s" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_wyuaa"]
+[ext_resource type="PackedScene" uid="uid://cr807nu5ibgmn" path="res://entities/robot.tscn" id="9_wyuaa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -96,3 +97,6 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.666086
 centered = false
+
+[node name="Robot" parent="." unique_id=1199028445 instance=ExtResource("9_wyuaa")]
+position = Vector2(140, 140)

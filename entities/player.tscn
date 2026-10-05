@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://5gw4c14h5pau" path="res://sprites/Sprite Pack 4/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" id="4_qsoyl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 9.490675
+height = 25.057632
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x08pd"]
 atlas = ExtResource("2_qly61")
@@ -59,7 +61,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_x08pd")
 }],
 "loop": 1,
-"name": &"hurt",
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qsoyl")
+}],
+"loop": 1,
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -108,21 +118,36 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i210l"]
+size = Vector2(12, 15)
+
 [node name="Player" type="CharacterBody2D" unique_id=633174394]
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=109271203]
-position = Vector2(0, 8.65266)
+position = Vector2(-0.99999994, 14)
 scale = Vector2(0.42146626, 0.39907998)
 shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=43468415]
 z_index = 1
+position = Vector2(-17, 4)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
-animation = &"idle"
+animation = &"fall"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1085636376]
 limit_left = 0
 limit_bottom = 208
 position_smoothing_enabled = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=897980670]
+position = Vector2(0, 1)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=460360012]
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_i210l")
+debug_color = Color(0.89245534, 0.24239701, 0.54516983, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
