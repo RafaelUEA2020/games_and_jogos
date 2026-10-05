@@ -1,0 +1,82 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://ui/ui_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="3_bg"]
+[ext_resource type="PackedScene" path="res://ui/controls_screen.tscn" id="4_controls"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Center/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 26
+text = "METROIDVANIA"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Box"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "JOGAR"
+
+[node name="ControlsButton" type="Button" parent="Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CONTROLES"
+
+[node name="QuitButton" type="Button" parent="Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SAIR"
+
+[node name="ControlsScreen" parent="." instance=ExtResource("4_controls")]
+visible = false
+layout_mode = 1
