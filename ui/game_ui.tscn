@@ -1,0 +1,124 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://ui/heart.png" id="2_heart"]
+[ext_resource type="Theme" path="res://ui/ui_theme.tres" id="3_theme"]
+[ext_resource type="PackedScene" path="res://ui/controls_screen.tscn" id="4_controls"]
+
+[node name="GameUI" type="Node"]
+process_mode = 3
+script = ExtResource("1_script")
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 50
+visible = false
+
+[node name="Hearts" type="HBoxContainer" parent="HudLayer"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 60.0
+offset_bottom = 12.0
+theme_override_constants/separation = 1
+
+[node name="Heart1" type="TextureRect" parent="HudLayer/Hearts"]
+custom_minimum_size = Vector2(9, 8)
+layout_mode = 2
+texture = ExtResource("2_heart")
+stretch_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="HudLayer/Hearts"]
+custom_minimum_size = Vector2(9, 8)
+layout_mode = 2
+texture = ExtResource("2_heart")
+stretch_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="HudLayer/Hearts"]
+custom_minimum_size = Vector2(9, 8)
+layout_mode = 2
+texture = ExtResource("2_heart")
+stretch_mode = 2
+
+[node name="Heart4" type="TextureRect" parent="HudLayer/Hearts"]
+custom_minimum_size = Vector2(9, 8)
+layout_mode = 2
+texture = ExtResource("2_heart")
+stretch_mode = 2
+
+[node name="Heart5" type="TextureRect" parent="HudLayer/Hearts"]
+custom_minimum_size = Vector2(9, 8)
+layout_mode = 2
+texture = ExtResource("2_heart")
+stretch_mode = 2
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 120
+visible = false
+
+[node name="PauseMenu" type="Control" parent="PauseLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_theme")
+
+[node name="Dim" type="ColorRect" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Center" type="CenterContainer" parent="PauseLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Box" type="VBoxContainer" parent="PauseLayer/PauseMenu/Center"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="PauseLayer/PauseMenu/Center/Box"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="PauseLayer/PauseMenu/Center/Box"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseLayer/PauseMenu/Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CONTINUAR"
+
+[node name="ControlsButton" type="Button" parent="PauseLayer/PauseMenu/Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CONTROLES"
+
+[node name="MenuButton" type="Button" parent="PauseLayer/PauseMenu/Center/Box"]
+custom_minimum_size = Vector2(120, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MENU"
+
+[node name="ControlsScreen" parent="PauseLayer" instance=ExtResource("4_controls")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
