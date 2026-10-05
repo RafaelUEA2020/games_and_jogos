@@ -142,3 +142,5 @@ target_spawn = "FromWest"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
 shape = SubResource("RectExitEast")
+
+[editable path="Player"]

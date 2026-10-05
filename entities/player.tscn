@@ -126,10 +126,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" parent="." unique_id=133630291 instance=ExtResource("6_qsoyl")]
-<<<<<<< HEAD
-=======
 limit_left = 0
-<<<<<<< HEAD
 limit_bottom = 208
 position_smoothing_enabled = true
 
@@ -143,6 +140,3 @@ shape = SubResource("RectangleShape2D_i210l")
 debug_color = Color(0.89245534, 0.24239701, 0.54516983, 0.41960785)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
-=======
->>>>>>> 5f3cd71 (mergeando os arquivos)
->>>>>>> 19aae6e (merging files)
