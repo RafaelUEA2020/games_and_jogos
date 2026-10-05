@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://entities/player.tscn" id="1_player"]
+[ext_resource type="TileSet" path="res://sprites/terrain.tres" id="2_terrain"]
+[ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
+[ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
+
+[sub_resource type="RectangleShape2D" id="RectExitEast"]
+size = Vector2(16, 120)
+
+[node name="GrassWest" type="Node2D"]
+script = ExtResource("area_gd")
+limit_right = 288
+limit_bottom = 208
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(240, 125)
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAAAEAAEAAAAAAAoAAAAEAAIAAAAAAAsAAAAEAAIAAAAAAAwAAAAEAAIAAAABAAkAAAAEAAEAAAABAAoAAAAEAAIAAAABAAsAAAAEAAIAAAABAAwAAAAEAAIAAAACAAkAAAAEAAEAAAACAAoAAAAEAAIAAAACAAsAAAAEAAIAAAACAAwAAAAEAAIAAAADAAkAAAAEAAEAAAADAAoAAAAEAAIAAAADAAsAAAAEAAIAAAADAAwAAAAEAAIAAAAEAAkAAAAEAAEAAAAEAAoAAAAEAAIAAAAEAAsAAAAEAAIAAAAEAAwAAAAEAAIAAAAFAAkAAAAEAAEAAAAFAAoAAAAEAAIAAAAFAAsAAAAEAAIAAAAFAAwAAAAEAAIAAAAGAAkAAAAEAAEAAAAGAAoAAAAEAAIAAAAGAAsAAAAEAAIAAAAGAAwAAAAEAAIAAAAHAAkAAAAEAAEAAAAHAAoAAAAEAAIAAAAHAAsAAAAEAAIAAAAHAAwAAAAEAAIAAAAIAAkAAAAEAAEAAAAIAAoAAAAEAAIAAAAIAAsAAAAEAAIAAAAIAAwAAAAEAAIAAAAJAAkAAAAEAAEAAAAJAAoAAAAEAAIAAAAJAAsAAAAEAAIAAAAJAAwAAAAEAAIAAAAKAAkAAAAEAAEAAAAKAAoAAAAEAAIAAAAKAAsAAAAEAAIAAAAKAAwAAAAEAAIAAAALAAkAAAAEAAEAAAALAAoAAAAEAAIAAAALAAsAAAAEAAIAAAALAAwAAAAEAAIAAAAMAAkAAAAEAAEAAAAMAAoAAAAEAAIAAAAMAAsAAAAEAAIAAAAMAAwAAAAEAAIAAAANAAkAAAAEAAEAAAANAAoAAAAEAAIAAAANAAsAAAAEAAIAAAANAAwAAAAEAAIAAAAOAAkAAAAEAAEAAAAOAAoAAAAEAAIAAAAOAAsAAAAEAAIAAAAOAAwAAAAEAAIAAAAPAAkAAAAEAAEAAAAPAAoAAAAEAAIAAAAPAAsAAAAEAAIAAAAPAAwAAAAEAAIAAAAQAAkAAAAEAAEAAAAQAAoAAAAEAAIAAAAQAAsAAAAEAAIAAAAQAAwAAAAEAAIAAAARAAkAAAAEAAEAAAARAAoAAAAEAAIAAAARAAsAAAAEAAIAAAARAAwAAAAEAAIAAAAGAAcAAAAJAAMAAAAHAAcAAAAKAAMAAAAIAAcAAAAKAAMAAAAJAAcAAAANAAMAAAA=")
+tile_set = ExtResource("2_terrain")
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="FromEast" type="Marker2D" parent="Spawns"]
+position = Vector2(240, 125)
+
+[node name="ExitEast" type="Area2D" parent="."]
+position = Vector2(280, 130)
+script = ExtResource("exit_gd")
+target_scene = "res://scenes/game.tscn"
+target_spawn = "FromWest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitEast"]
+shape = SubResource("RectExitEast")
+
+[node name="Enemy1" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(60, 128)
+patrol_range = 30
+
+[node name="Enemy2" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(190, 128)
+patrol_range = 15
+
+[node name="Enemy3" parent="." instance=ExtResource("enemy_scn")]
+position = Vector2(128, 96)
+patrol_range = 16
