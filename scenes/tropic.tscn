@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://o5sxak2lotmn"]
+[gd_scene format=3 uid="uid://o5sxak2lotmn"]
 
 [ext_resource type="PackedScene" uid="uid://crb0h0hro3u2r" path="res://entities/player.tscn" id="1_j8cmn"]
 [ext_resource type="TileSet" uid="uid://drrotfoo1gst5" path="res://sprites/terrain.tres" id="2_mtmls"]
@@ -9,13 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://dtguxiwx4tarf" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_63ryy"]
 [ext_resource type="Texture2D" uid="uid://c8v52jwj7pe0s" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_wyuaa"]
 [ext_resource type="PackedScene" uid="uid://kyg8wpdkjgxx" path="res://entities/level_ending.tscn" id="9_wyuaa"]
-
+[ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
 [ext_resource type="PackedScene" uid="uid://cr807nu5ibgmn" path="res://entities/robot.tscn" id="9_robot"]
-
-[ext_resource type="PackedScene" uid="uid://cr807nu5ibgmn" path="res://entities/robot.tscn" id="9_wyuaa"]
 [ext_resource type="Script" path="res://scripts/area.gd" id="area_gd"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="exit_gd"]
-[ext_resource type="PackedScene" path="res://entities/enemy.tscn" id="enemy_scn"]
+
 
 [sub_resource type="RectangleShape2D" id="RectExitWest"]
 size = Vector2(16, 100)
@@ -212,5 +210,3 @@ patrol_range = 70
 [node name="CollisionShape2D" parent="LevelEnding" index="0" unique_id=1846107450]
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_wyuaa")
-
-[editable path="LevelEnding"]
